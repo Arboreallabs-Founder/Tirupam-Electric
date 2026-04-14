@@ -4,6 +4,8 @@
 
 [build]
   command = "npm run build"
+  # Relative to this directory when `base` is `new-tem` in the root netlify.toml
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
