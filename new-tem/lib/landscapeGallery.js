@@ -3,10 +3,10 @@
  * No portrait-oriented assets. Add wide images under public/images/ and append.
  */
 export const landscapeGallery = [
-  { src: "/images/bike-landscape-1.png", alt: "Tem Motorrs electric bike — urban waterfront" },
-  { src: "/images/bike-landscape-2.png", alt: "Tem Motorrs electric bike — bridge and skyline" },
-  { src: "/images/bike-landscape-3.png", alt: "Tem Motorrs electric bike — coastal highway" },
-  { src: "/images/bike-landscape-4.png", alt: "Tem Motorrs electric bike — open landscape" },
+  { src: "/images/bike-landscape-1.webp", alt: "Tem Motorrs electric bike — urban waterfront" },
+  { src: "/images/bike-landscape-2.webp", alt: "Tem Motorrs electric bike — bridge and skyline" },
+  { src: "/images/bike-landscape-3.webp", alt: "Tem Motorrs electric bike — coastal highway" },
+  { src: "/images/bike-landscape-4.webp", alt: "Tem Motorrs electric bike — open landscape" },
   { src: "/images/bike-beach-wide.jpeg", alt: "Tem Motorrs at sunset on the coast" },
   { src: "/images/bike-city.jpeg", alt: "Tem Motorrs in the city at dusk" },
   { src: "/images/bike-bridge.jpeg", alt: "Tem Motorrs on the sea link" },

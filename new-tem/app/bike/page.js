@@ -8,11 +8,23 @@ import ScrollReveal from "@/components/ScrollReveal";
 import { landscapeGallery } from "@/lib/landscapeGallery";
 import styles from "./page.module.css";
 
+import imgFeatBridge from "../../public/images/bike-bridge.jpeg";
+import imgFeatAlps from "../../public/images/bike-alps.jpeg";
+import imgFeatRohtang from "../../public/images/bike-rohtang.jpeg";
+
 /** One full loop through every hero/gallery slide (ms). */
 const HERO_ROTATION_MS = 7000;
 
 /** All landscape assets from lib/landscapeGallery (dynamic list). */
 const gallery = landscapeGallery;
+
+/** Previous value during render (for mounting only active± crossfade slides). */
+function usePrevious(value) {
+  const ref = useRef(undefined);
+  const prev = ref.current;
+  ref.current = value;
+  return prev;
+}
 
 const specs = [
   { label: "Range", value: "300 km", note: "Structural battery target" },
@@ -29,17 +41,17 @@ const features = [
   {
     title: "9 mins Fast charging. Ride More.",
     desc: "The rapid charging system is engineered for 9-minute top-ups, reducing downtime and keeping urban riders moving throughout the day.",
-    image: landscapeGallery[6].src,
+    image: imgFeatBridge,
   },
   {
     title: "A Battery That Is The Bike.",
     desc: "The structural battery isn't inside the chassis — it is the chassis. This radical approach slashes weight, improves center of gravity, and delivers a 300 km range ambition that no bolt-on battery pack can match.",
-    image: landscapeGallery[8].src,
+    image: imgFeatAlps,
   },
   {
     title: "Intelligence That Learns Every Ride.",
     desc: "The AI-Driven ARAS system doesn't just react — it anticipates. Drawing on fleet-wide riding data, it adapts to road conditions, rider behavior, and environmental factors to provide a protective cocoon that gets smarter over time.",
-    image: landscapeGallery[9].src,
+    image: imgFeatRohtang,
   },
 ];
 
@@ -89,6 +101,11 @@ export default function BikePage() {
   });
 
   const activeImg = heroIndex;
+  const previousSlide = usePrevious(heroIndex);
+  const heroGalleryIndices =
+    previousSlide !== undefined && previousSlide !== heroIndex
+      ? new Set([heroIndex, previousSlide])
+      : new Set([heroIndex]);
 
   useEffect(() => {
     const row = thumbsScrollRef.current;
@@ -118,7 +135,8 @@ export default function BikePage() {
         onMouseLeave={() => setHeroPaused(false)}
       >
         <div className={styles.heroBg} aria-hidden>
-          {gallery.map((img, i) => (
+          {gallery.map((img, i) =>
+            heroGalleryIndices.has(i) ? (
             <motion.div
               key={img.src}
               className={styles.heroSlide}
@@ -136,13 +154,15 @@ export default function BikePage() {
                 src={img.src}
                 alt=""
                 fill
-                priority={i === 0}
-                loading={i < 2 ? "eager" : "lazy"}
+                priority={i === 0 && activeImg === 0}
+                loading={i === activeImg ? "eager" : "lazy"}
                 sizes="100vw"
+                quality={80}
                 className={styles.heroPhoto}
               />
             </motion.div>
-          ))}
+            ) : null,
+          )}
           <div className={styles.heroOverlay} />
         </div>
 
@@ -189,7 +209,8 @@ export default function BikePage() {
       >
         <div className="container-wide">
           <div className={styles.galleryMain}>
-            {gallery.map((img, i) => (
+            {gallery.map((img, i) =>
+              heroGalleryIndices.has(i) ? (
               <motion.div
                 key={img.src}
                 className={styles.gallerySlide}
@@ -205,11 +226,13 @@ export default function BikePage() {
                   alt={img.alt}
                   fill
                   sizes="(max-width: 900px) 100vw, 1200px"
-                  loading={i < 2 ? "eager" : "lazy"}
+                  loading={i === activeImg ? "eager" : "lazy"}
+                  quality={80}
                   className={styles.galleryPhoto}
                 />
               </motion.div>
-            ))}
+              ) : null,
+            )}
           </div>
 
           {!reduceMotion && gallery.length > 1 && (
@@ -300,6 +323,7 @@ export default function BikePage() {
                     alt={f.title}
                     fill
                     sizes="(max-width: 768px) 100vw, 45vw"
+                    placeholder="blur"
                     className={styles.featurePhoto}
                   />
                 </div>
