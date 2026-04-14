@@ -4,9 +4,9 @@
 [build]
   base = "new-tem"
   command = "npm run build"
-  # Path is relative to repo root (monorepo). Do not use bare `.next` here —
-  # Netlify resolves it to `<repo>/.next` instead of `new-tem/.next`.
-  publish = "new-tem/.next"
+  # Publish is relative to `base` (see Netlify monorepo docs). Use `.next`, not `new-tem/.next`
+  # or Netlify falls back to publishing the whole base dir — same as base — and the Next.js plugin errors.
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
