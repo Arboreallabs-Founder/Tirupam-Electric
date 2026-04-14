@@ -1,0 +1,12 @@
+# Monorepo: Next.js app lives in new-tem.
+# Netlify's Next.js runtime handles publish output automatically.
+
+[build]
+  base = "new-tem"
+  command = "npm run build"
+  # Path is relative to repo root (monorepo). Do not use bare `.next` here —
+  # Netlify resolves it to `<repo>/.next` instead of `new-tem/.next`.
+  publish = "new-tem/.next"
+
+[build.environment]
+  NODE_VERSION = "20"

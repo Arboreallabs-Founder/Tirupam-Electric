@@ -1,0 +1,9 @@
+# Build is configured at the repository root: ../netlify.toml (base = new-tem).
+# This file is optional; kept for local `netlify deploy` when run from new-tem only.
+# Netlify's Next.js runtime handles publish output automatically.
+
+[build]
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "20"

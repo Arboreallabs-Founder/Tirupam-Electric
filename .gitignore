@@ -2,6 +2,8 @@
 
 # dependencies
 /node_modules
+node_modules/
+new-tem/node_modules/
 /.pnp
 .pnp.*
 .yarn/*
@@ -39,3 +41,15 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local Netlify folder
+.netlify
+
+# logs / temp
+dev-server.log
+dev.log
+tmp-netlify*.json
+
+# local duplicates / tooling
+new-tem copy/
+.claude/

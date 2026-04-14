@@ -1,0 +1,31 @@
+name: Deploy to Netlify
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main, master]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: npm
+          cache-dependency-path: new-tem/package-lock.json
+
+      - name: Install
+        working-directory: new-tem
+        run: npm ci
+
+      - name: Install Netlify CLI
+        run: npm install -g netlify-cli@24
+
+      - name: Build & deploy (Linux avoids Windows plugin rename bug)
+        working-directory: .
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+        run: netlify deploy --prod --build --site "${{ secrets.NETLIFY_SITE_ID }}" --message "GitHub Actions deploy"
