@@ -1,0 +1,104 @@
+.wrap {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3.5rem;
+  min-height: 320px;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-right: 1px solid var(--border);
+}
+
+.tab {
+  padding: 1.1rem 1.5rem;
+  text-align: left;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: none;
+  border: none;
+  border-left: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.4s var(--ease);
+  font-family: var(--font-body), sans-serif;
+}
+
+.tab:hover {
+  color: var(--text-primary);
+  background: var(--dark-elevated);
+}
+
+.tabActive {
+  color: var(--text-primary);
+  border-left-color: var(--accent-gold);
+  background: var(--accent-gold-light);
+}
+
+.content {
+  display: flex;
+  align-items: flex-start;
+  padding-top: 1.2rem;
+}
+
+.panel {
+  max-width: 520px;
+}
+
+.panelNumber {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  opacity: 0.1;
+  line-height: 1;
+  margin-bottom: 1.2rem;
+}
+
+.panelTitle {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1.1rem;
+  letter-spacing: -0.02em;
+}
+
+.panelDesc {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .tabs {
+    flex-direction: row;
+    overflow-x: auto;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    gap: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+  .tab {
+    white-space: nowrap;
+    border-left: none;
+    border-bottom: 1px solid transparent;
+    padding: 0.8rem 1rem;
+    font-size: 0.6rem;
+  }
+  .tabActive {
+    border-left-color: transparent;
+    border-bottom-color: var(--accent-gold);
+    background: transparent;
+  }
+}

@@ -1,0 +1,210 @@
+/* ─── Hero — dark, no image ─── */
+.hero {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  align-items: center;
+  background: var(--dark);
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  padding: calc(var(--nav-height) + 4rem) clamp(2rem, 6vw, 6rem) 4rem;
+  max-width: 760px;
+}
+
+.heroTitle {
+  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  color: var(--white);
+  letter-spacing: -0.025em;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
+  line-height: 1.0;
+}
+
+.heroSub {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1.85;
+  max-width: 48ch;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+/* ─── Innovation — full width text only ─── */
+.innovFull {
+  max-width: 680px;
+}
+
+/* ─── Innovation Rows (legacy, kept for reference) ─── */
+.innovRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 4.5rem;
+  align-items: center;
+}
+
+.innovText,
+.innovImage {
+  min-width: 0;
+}
+
+.innovReverse .innovText {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.innovReverse .innovImage {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.innovNum {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 4rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  opacity: 0.1;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.innovSubtitle {
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  font-weight: 500;
+  margin-bottom: 1rem;
+  opacity: 0.75;
+  font-family: var(--font-body), sans-serif;
+}
+
+.innovTitle {
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  letter-spacing: -0.02em;
+  margin-bottom: 1.4rem;
+  font-weight: 600;
+  line-height: 1.06;
+}
+
+.innovDesc {
+  font-size: 0.98rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 1.4rem;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+}
+
+.innovDetail {
+  font-size: 0.85rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  padding-left: 1.4rem;
+  border-left: 1px solid rgba(192, 152, 80, 0.4);
+  font-family: var(--font-body), sans-serif;
+  font-style: italic;
+}
+
+.innovImage {
+  overflow: hidden;
+}
+
+.innovImageFrame {
+  position: relative;
+  aspect-ratio: var(--photo-aspect, 16 / 9);
+  width: 100%;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 20px 48px -20px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.5s var(--ease);
+}
+
+.innovImageFrame:hover {
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.06),
+    0 28px 64px -20px rgba(0, 0, 0, 0.12);
+}
+
+.innovPhoto {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s var(--ease);
+}
+
+.innovImageFrame:hover .innovPhoto {
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .innovRow,
+  .innovReverse {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .innovReverse .innovText,
+  .innovReverse .innovImage {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}
+
+/* ─── FAQ Section ─── */
+.faqSection { }
+
+.faqGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  border: 1px solid var(--border);
+}
+
+.faqItem {
+  padding: clamp(1.8rem, 2.8vw, 2.4rem) clamp(1.5rem, 2.2vw, 2rem);
+  background: var(--dark-elevated);
+  position: relative;
+  transition: background 0.4s var(--ease);
+}
+
+.faqItem::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  pointer-events: none;
+}
+
+.faqItem:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.faqQ {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+  margin-bottom: 0.85rem;
+}
+
+.faqA {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  margin: 0;
+  font-family: var(--font-body), sans-serif;
+}
+
+@media (max-width: 768px) {
+  .faqGrid { grid-template-columns: 1fr; }
+}

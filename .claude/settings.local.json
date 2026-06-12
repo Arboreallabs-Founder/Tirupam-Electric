@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"http://localhost:3001/_next/static/chunks/%5Broot-of-the-server%5D__08k--np._.css\")",
+      "Bash(curl -s http://localhost:3001/)",
+      "Bash(curl -s http://localhost:3001/technology)",
+      "Bash(curl -s http://localhost:3001/bike)",
+      "Bash(curl -s http://localhost:3001/about)",
+      "Bash(curl -s http://localhost:3001/pre-order)",
+      "Bash(curl -s \"http://localhost:3001/technology\")",
+      "Bash(curl -s \"http://localhost:3001/bike\")",
+      "Bash(curl -s \"http://localhost:3001/about\")",
+      "Bash(curl -s \"http://localhost:3001/pre-order\")",
+      "Bash(node -e ' *)"
+    ]
+  }
+}

@@ -1,0 +1,450 @@
+/* ─── Hero — dark, no image ─── */
+.hero {
+  position: relative;
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--dark);
+  overflow: hidden;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 800px;
+  text-align: center;
+  padding: calc(var(--nav-height) + 3rem) clamp(1.5rem, 5vw, 4rem) 3rem;
+}
+
+.heroCentered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroEyebrow {
+  display: inline-block;
+  font-size: 0.58rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: 1.8rem;
+  font-weight: 400;
+  font-family: var(--font-body), sans-serif;
+  opacity: 0.8;
+}
+
+.heroTitle {
+  font-size: clamp(3rem, 7.5vw, 6rem);
+  color: var(--white);
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+  margin-bottom: 1.4rem;
+  font-weight: 600;
+}
+
+.heroSub {
+  font-size: clamp(0.88rem, 1.2vw, 1rem);
+  color: rgba(255, 255, 255, 0.45);
+  line-height: 1.9;
+  max-width: 44ch;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+}
+
+/* ─── Manifesto / Pull Quote ─── */
+.manifesto {
+  border-bottom: 1px solid var(--border);
+}
+
+.manifestoInner {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.manifestoQuote {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1.5rem, 3vw, 2.4rem);
+  line-height: 1.5;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  font-style: italic;
+  margin: 0;
+}
+
+.manifestoAttr {
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.manifestoRole {
+  font-size: 0.58rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  font-weight: 500;
+  opacity: 0.65;
+  font-family: var(--font-body), sans-serif;
+}
+
+/* ─── Mission ─── */
+.missionGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 680px;
+}
+
+.missionTitle {
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  letter-spacing: -0.02em;
+  max-width: 22ch;
+  margin-bottom: 1.8rem;
+  line-height: 1.1;
+  font-weight: 600;
+}
+
+.missionDesc {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  max-width: 50ch;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+}
+
+.missionImageCol {}
+
+.missionImageFrame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  width: 100%;
+  overflow: hidden;
+  background: var(--light-gray);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 24px 56px -20px rgba(0, 0, 0, 0.08);
+}
+
+.missionPhoto {
+  object-fit: cover;
+  object-position: center;
+}
+
+@media (max-width: 768px) {
+  .missionGrid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .missionImageFrame {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+/* ─── Vision ─── */
+.visionSection {
+  position: relative;
+  overflow: hidden;
+}
+
+.visionLayout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 680px;
+}
+
+.visionImageFrame {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  width: 100%;
+  overflow: hidden;
+  background: var(--light-gray);
+  box-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.04),
+    0 24px 56px -20px rgba(0, 0, 0, 0.08);
+}
+
+.visionPhoto {
+  object-fit: cover;
+  object-position: center;
+}
+
+.visionTitle {
+  font-size: clamp(1.8rem, 3.5vw, 3rem);
+  letter-spacing: -0.025em;
+  margin-bottom: 0.4rem;
+  line-height: 1.08;
+  max-width: 16ch;
+  font-weight: 600;
+}
+
+.visionDivider {
+  width: 2.5rem;
+  height: 1px;
+  background: var(--accent-gold);
+  opacity: 0.45;
+  margin: 2rem 0;
+}
+
+.visionDesc {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  max-width: 48ch;
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .visionLayout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .visionImageFrame {
+    aspect-ratio: 16 / 9;
+    max-height: 300px;
+  }
+}
+
+/* ─── Values ─── */
+.valuesGrid {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  border: 1px solid var(--border);
+}
+
+.valueCard {
+  padding: 2.2rem 1.75rem;
+  background: var(--dark-elevated);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.5s var(--ease);
+  position: relative;
+  overflow: hidden;
+}
+
+.valueCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  opacity: 0;
+  transition: opacity 0.5s var(--ease);
+}
+
+.valueCard:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.valueCard:hover::before {
+  opacity: 0.5;
+}
+
+.valueIcon {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border);
+  color: var(--accent-gold);
+  margin-bottom: 1.4rem;
+  transition: all 0.4s var(--ease);
+}
+
+.valueCard:hover .valueIcon {
+  color: var(--accent-gold-deep);
+  border-color: rgba(192, 152, 80, 0.2);
+  background: var(--accent-gold-light);
+}
+
+.valueContent {
+  flex: 1;
+}
+
+.valueTitle {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  letter-spacing: -0.01em;
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.valueDesc {
+  font-size: 0.84rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  font-family: var(--font-body), sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .valuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Timeline ─── */
+.timeline {
+  margin-top: 3.5rem;
+  position: relative;
+  padding-left: 2rem;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  width: 1px;
+  background: var(--border);
+}
+
+.timelineItem {
+  position: relative;
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 1.5rem;
+  padding: 2rem 0;
+  padding-left: 1.5rem;
+}
+
+.timelineItem + .timelineItem {
+  border-top: none;
+}
+
+.timelineDot {
+  position: absolute;
+  left: -2rem;
+  top: 2.35rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--border);
+  border: 2px solid var(--white);
+  z-index: 1;
+}
+
+.timelineCurrent .timelineDot {
+  background: var(--accent-gold);
+  border-color: var(--white);
+  box-shadow: 0 0 0 4px rgba(192, 152, 80, 0.15);
+}
+
+.timelinePulse {
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid var(--accent-gold);
+  opacity: 0;
+  animation: pulse 2.5s ease-out infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; transform: scale(1); }
+  100% { opacity: 0; transform: scale(2.5); }
+}
+
+.timelineYear {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--accent-gold);
+  opacity: 0.65;
+  padding-top: 0.15rem;
+}
+
+.timelineCurrent .timelineYear {
+  opacity: 1;
+}
+
+.timelineTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+  font-family: var(--font-display), Georgia, serif;
+}
+
+.timelineDesc {
+  font-size: 0.88rem;
+  line-height: 1.8;
+  color: var(--text-secondary);
+  max-width: 50ch;
+  font-family: var(--font-body), sans-serif;
+}
+
+@media (max-width: 640px) {
+  .timelineItem {
+    grid-template-columns: 1fr;
+    gap: 0.3rem;
+  }
+
+  .timelineYear {
+    font-size: 0.72rem;
+  }
+}
+
+/* ─── CTA ─── */
+.ctaSection {
+  min-height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 50% 45% at 50% 50%, rgba(192, 152, 80, 0.12), transparent),
+    radial-gradient(ellipse 30% 30% at 25% 65%, rgba(192, 152, 80, 0.05), transparent),
+    radial-gradient(ellipse 35% 35% at 78% 30%, rgba(192, 152, 80, 0.07), transparent);
+  pointer-events: none;
+}
+
+.ctaTitle {
+  font-size: clamp(2.4rem, 5.5vw, 4.5rem);
+  color: var(--white);
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+  position: relative;
+  font-weight: 600;
+}
+
+.ctaBtns {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}

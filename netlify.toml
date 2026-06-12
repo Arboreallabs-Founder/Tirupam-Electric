@@ -1,11 +1,10 @@
-# Monorepo: Next.js app lives in new-tem.
+# Build is configured at the repository root: ../netlify.toml (base = new-tem).
+# This file is optional; kept for local `netlify deploy` when run from new-tem only.
 # Netlify's Next.js runtime handles publish output automatically.
 
 [build]
-  base = "new-tem"
   command = "npm run build"
-  # Publish is relative to `base` (see Netlify monorepo docs). Use `.next`, not `new-tem/.next`
-  # or Netlify falls back to publishing the whole base dir — same as base — and the Next.js plugin errors.
+  # Relative to this directory when `base` is `new-tem` in the root netlify.toml
   publish = ".next"
 
 [build.environment]
