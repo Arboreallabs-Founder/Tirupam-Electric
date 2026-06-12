@@ -6,6 +6,7 @@ import Marquee from "@/components/Marquee";
 import StatsStrip from "@/components/StatsStrip";
 import InnovationTabs from "@/components/InnovationTabs";
 import BikeScrollExperience from "@/components/BikeScrollExperience";
+import FaqAccordion from "@/components/FaqAccordion";
 import styles from "./page.module.css";
 
 const homeFaqs = [
@@ -193,14 +194,7 @@ export default function HomePage() {
             <span className="section-label">FAQ</span>
             <h2 className="section-title">Everything you'd want to know</h2>
           </ScrollReveal>
-          <div className={styles.faqGrid}>
-            {homeFaqs.map((faq) => (
-              <article key={faq.q} className={styles.faqItem}>
-                <h3 className={styles.faqQ}>{faq.q}</h3>
-                <p className={styles.faqA}>{faq.a}</p>
-              </article>
-            ))}
-          </div>
+          <FaqAccordion faqs={homeFaqs} />
         </div>
       </section>
 
