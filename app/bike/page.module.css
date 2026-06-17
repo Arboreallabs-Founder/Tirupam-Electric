@@ -1,60 +1,38 @@
-/* ─── Hero — text left / image right ─── */
+/* ─── Hero — full-screen video ─── */
 .hero {
   position: relative;
-  min-height: 70vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  background: var(--dark);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: #000;
   overflow: hidden;
+}
+
+.heroVideo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(13, 11, 30, 0.88) 0%,
+    rgba(13, 11, 30, 0.55) 55%,
+    rgba(13, 11, 30, 0.2) 100%
+  );
 }
 
 .heroContent {
   position: relative;
   z-index: 2;
-  padding: calc(var(--nav-height) + 4rem) clamp(2rem, 6vw, 4rem) 4rem;
-  display: flex;
-  align-items: center;
-}
-
-.heroImageCol {
-  position: relative;
-  overflow: hidden;
-}
-
-.heroPhoto {
-  object-fit: cover;
-  object-position: center;
-}
-
-.heroImageOverlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to right,
-    var(--dark) 0%,
-    rgba(8, 8, 8, 0.3) 50%,
-    rgba(8, 8, 8, 0.1) 100%
-  );
-}
-
-@media (max-width: 768px) {
-  .hero {
-    grid-template-columns: 1fr;
-    min-height: auto;
-  }
-
-  .heroImageCol {
-    height: 55vw;
-  }
-
-  .heroImageOverlay {
-    background: linear-gradient(
-      to bottom,
-      var(--dark) 0%,
-      rgba(8, 8, 8, 0.1) 40%,
-      rgba(8, 8, 8, 0.6) 100%
-    );
-  }
+  padding: calc(var(--nav-height) + 4rem) clamp(2rem, 6vw, 6rem) 4rem;
+  max-width: 680px;
 }
 
 .heroCtas {
@@ -65,12 +43,12 @@
 }
 
 .heroTitle {
-  font-size: clamp(2.8rem, 6.5vw, 5.5rem);
+  font-size: clamp(3rem, 7vw, 6rem);
   color: var(--white);
-  letter-spacing: -0.025em;
+  letter-spacing: -0.03em;
   margin-bottom: 1rem;
   font-weight: 600;
-  line-height: 1.0;
+  line-height: 0.98;
 }
 
 .heroSub {
@@ -80,6 +58,86 @@
   font-family: var(--font-body), sans-serif;
   font-weight: 300;
   letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 90vh;
+    align-items: flex-end;
+  }
+
+  .heroContent {
+    padding-bottom: 3rem;
+  }
+
+  .heroOverlay {
+    background: linear-gradient(
+      to top,
+      rgba(13, 11, 30, 0.92) 0%,
+      rgba(13, 11, 30, 0.5) 60%,
+      rgba(13, 11, 30, 0.15) 100%
+    );
+  }
+}
+
+/* ─── Side Profile Showcase ─── */
+.profileSection {
+  position: relative;
+  height: clamp(380px, 60vh, 680px);
+  overflow: hidden;
+  background: #000;
+}
+
+.profileImageWrap {
+  position: absolute;
+  inset: 0;
+}
+
+.profilePhoto {
+  object-fit: cover;
+  object-position: center;
+  transition: transform 0.8s var(--ease);
+}
+
+.profileSection:hover .profilePhoto {
+  transform: scale(1.02);
+}
+
+.profileOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13, 11, 30, 0.75) 0%,
+    transparent 55%
+  );
+}
+
+.profileCaption {
+  position: absolute;
+  bottom: clamp(1.5rem, 4vw, 3rem);
+  left: clamp(1.5rem, 5vw, 6rem);
+  z-index: 2;
+}
+
+.profileCaptionLabel {
+  display: block;
+  font-size: 0.55rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  font-family: var(--font-body), sans-serif;
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.profileCaptionText {
+  font-family: var(--font-display), Georgia, serif;
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin: 0;
 }
 
 /* ─── Gallery ─── */
@@ -419,7 +477,7 @@
   position: relative;
   aspect-ratio: 4 / 5;
   overflow: hidden;
-  background: var(--dark-surface);
+  background: #000;
 }
 
 .featurePhoto {
@@ -509,7 +567,7 @@
   aspect-ratio: var(--photo-aspect, 16 / 9);
   width: 100%;
   overflow: hidden;
-  background: var(--light-gray);
+  background: #000;
 }
 
 .featurePhoto {

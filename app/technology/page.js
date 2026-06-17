@@ -4,6 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/ScrollReveal";
 import Marquee from "@/components/Marquee";
+import FaqAccordion from "@/components/FaqAccordion";
 import styles from "./page.module.css";
 
 const techFaqs = [
@@ -29,7 +30,7 @@ const techFaqs = [
   },
   {
     q: "How many patents does TEM Motorrs have?",
-    a: "TEM Motorrs has filed 24 patents covering vehicle design, the magnetless PCB motor, the structural battery architecture, suspension systems, and the integrated BMS-charger. Two patents were granted by the Indian Patent Office as of early 2025.",
+    a: "TEM Motorrs has filed 24 patents covering vehicle design, the magnetless PCB motor, the structural battery architecture, suspension systems, and the integrated BMS-charger. 13 patents have been granted by the Indian Patent Office.",
   },
 ];
 
@@ -135,14 +136,7 @@ export default function TechnologyPage() {
               Everything you want to know about how TEM Motorrs' six innovations actually work.
             </p>
           </ScrollReveal>
-          <div className={styles.faqGrid}>
-            {techFaqs.map((faq) => (
-              <article key={faq.q} className={styles.faqItem}>
-                <h3 className={styles.faqQ}>{faq.q}</h3>
-                <p className={styles.faqA}>{faq.a}</p>
-              </article>
-            ))}
-          </div>
+          <FaqAccordion faqs={techFaqs} />
         </div>
       </section>
 

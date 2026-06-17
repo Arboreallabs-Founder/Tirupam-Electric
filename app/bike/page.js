@@ -45,8 +45,17 @@ export default function BikePage() {
   return (
     <div className="page-enter">
 
-      {/* ── HERO — text left / bike image right ── */}
+      {/* ── HERO — full-screen video ── */}
       <section className={styles.hero}>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className={styles.heroVideo}
+          src="/images/bike.mp4"
+        />
+        <div className={styles.heroOverlay} aria-hidden />
         <div className={styles.heroContent}>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -68,21 +77,6 @@ export default function BikePage() {
             </div>
           </motion.div>
         </div>
-        <motion.div
-          className={styles.heroImageCol}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.5 }}
-        >
-          <Image
-            src="/images/side bike imge.png"
-            alt="TEM Electric — Side Profile"
-            fill
-            className={styles.heroPhoto}
-            priority
-          />
-          <div className={styles.heroImageOverlay} aria-hidden />
-        </motion.div>
       </section>
 
       {/* ── SPECS ── */}
@@ -102,6 +96,23 @@ export default function BikePage() {
                 </div>
               </ScrollReveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── SIDE PROFILE SHOWCASE ── */}
+      <section className={styles.profileSection}>
+        <div className={styles.profileImageWrap}>
+          <Image
+            src="/images/side bike imge.png"
+            alt="TEM Electric — Side Profile"
+            fill
+            className={styles.profilePhoto}
+          />
+          <div className={styles.profileOverlay} aria-hidden />
+          <div className={styles.profileCaption}>
+            <span className={styles.profileCaptionLabel}>Side Profile</span>
+            <p className={styles.profileCaptionText}>TEM Electric — 2025</p>
           </div>
         </div>
       </section>
@@ -166,7 +177,7 @@ export default function BikePage() {
             <strong>TEM Electric</strong>
             <span className={styles.stickyTagline}>Priority reservation available</span>
           </div>
-          <Link href="/pre-order" className="btn btn-dark">
+          <Link href="/pre-order" className="btn btn-white">
             Pre-order Now →
           </Link>
         </div>

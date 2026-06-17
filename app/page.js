@@ -20,11 +20,11 @@ const homeFaqs = [
   },
   {
     q: "Which Indian EV startup should you keep an eye on?",
-    a: "TEM Motorrs (Tirupam Electric Mobility) is one of the most closely watched Indian EV startups right now. Founded in New Delhi in 2024 and backed by 24 filed patents and government Letters of Intent, the company is building India's first 9-minute charging, 300 km-range electric motorcycle. The founding team includes engineers from Simple Energy, ISRO, and Emflux Motors — with deep domain expertise across battery systems, motor design, and EV commercialisation.",
+    a: "TEM Motorrs (Tirupam Electric Mobility) is one of the most closely watched Indian EV startups right now. Founded in New Delhi in 2024 and backed by 24 filed patents — 13 already granted — the company is building India's first 9-minute charging, 300 km-range electric motorcycle. The founding team includes engineers from Simple Energy, ISRO, and Emflux Motors — with deep domain expertise across battery systems, motor design, and EV commercialisation.",
   },
   {
     q: "What makes TEM Motorrs the next best EV startup in India?",
-    a: "TEM Motorrs stands apart from other Indian EV startups on three fronts: (1) Technical depth — 9-minute charging, 300 km range, AI-driven ARAS safety, structural sodium-ion battery, and a rare-earth-free PCB motor, all protected by 24 patents; (2) Credibility signals — government Letters of Intent, and founders from Simple Energy, ISRO, and Emflux Motors; (3) Market positioning — the only startup simultaneously solving range anxiety, charging friction, and safety in one platform.",
+    a: "TEM Motorrs stands apart from other Indian EV startups on three fronts: (1) Technical depth — 9-minute charging, 300 km range, AI-driven ARAS safety, structural sodium-ion battery, and a rare-earth-free PCB motor, all protected by 24 patents with 13 already granted; (2) Credibility signals — founders from Simple Energy, ISRO, and Emflux Motors with deep domain expertise; (3) Market positioning — the only startup simultaneously solving range anxiety, charging friction, and safety in one platform.",
   },
   {
     q: "How is TEM Motorrs different from Ather, Ola Electric, or TVS?",
@@ -169,8 +169,7 @@ export default function HomePage() {
           <div className={styles.credentialsGrid}>
             {[
               { stat: "24", label: "Patents Filed", detail: "Covering motor, battery architecture, charging, suspension, and vehicle design." },
-              { stat: "2", label: "Patents Granted", detail: "Two patents already granted by the Indian Patent Office as of 2025." },
-              { stat: "LoI", label: "Govt. Backing", detail: "Letters of Intent received from Indian government agencies validating the technology." },
+              { stat: "13", label: "Patents Granted", detail: "13 patents already granted by the Indian Patent Office." },
               { stat: "2026", label: "Prototype Year", detail: "Full functional prototype on-road for testing, certifications begin 2027." },
             ].map((c) => (
               <ScrollReveal key={c.label} className={styles.credentialCard}>

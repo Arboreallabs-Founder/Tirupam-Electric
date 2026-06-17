@@ -226,38 +226,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Roadmap ── */}
-      <section className="section">
-        <div className="container">
-          <ScrollReveal>
-            <span className="section-label">Roadmap</span>
-            <h2 className="section-title">From vision to road.</h2>
-            <p className="section-desc">
-              Every milestone is sequenced to compound learning, de-risk execution,
-              and build brand desirability.
-            </p>
-          </ScrollReveal>
-
-          <div className={styles.timeline}>
-            <div className={styles.timelineLine} aria-hidden />
-            {roadmap.map((item, i) => (
-              <ScrollReveal key={item.year} delay={i * 0.08}>
-                <div className={`${styles.timelineItem} ${item.status === "current" ? styles.timelineCurrent : ""}`}>
-                  <div className={styles.timelineDot}>
-                    {item.status === "current" && <span className={styles.timelinePulse} />}
-                  </div>
-                  <div className={styles.timelineYear}>{item.year}</div>
-                  <div className={styles.timelineBody}>
-                    <h3 className={styles.timelineTitle}>{item.title}</h3>
-                    <p className={styles.timelineDesc}>{item.desc}</p>
-                  </div>
-                </div>
-              </ScrollReveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* ── CTA ── */}
       <section className={`section section-dark ${styles.ctaSection}`}>
         <div className="container" style={{ textAlign: "center" }}>

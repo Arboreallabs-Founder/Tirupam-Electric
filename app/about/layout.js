@@ -3,7 +3,7 @@ const siteUrl = "https://temmotorrs.com";
 export const metadata = {
   title: "About | India's Premium EV Startup | Bhanu Marwaha, Ayush Singh",
   description:
-    "TEM Motorrs (Tirupam Electric Mobility) is a New Delhi-based electric two-wheeler startup. Founded by Bhanu Marwaha (ex-Simple Energy, ISRO) and Ayush Singh, building India's most innovative electric motorcycle with 24 patents and government LoI backing.",
+    "TEM Motorrs (Tirupam Electric Mobility) is a New Delhi-based electric two-wheeler startup. Founded by Bhanu Marwaha (ex-Simple Energy, ISRO) and Ayush Singh, building India's most innovative electric motorcycle with 24 patents filed and 13 granted.",
   keywords: [
     "TEM Motorrs founders",
     "Bhanu Marwaha TEM Motorrs",
@@ -19,7 +19,7 @@ export const metadata = {
   openGraph: {
     title: "About TEM Motorrs | Built To Think — Indian EV Startup",
     description:
-      "Meet the team behind India's most innovative electric motorcycle startup. 24 patents, government LoIs, and founders from Simple Energy, ISRO, Emflux Motors.",
+      "Meet the team behind India's most innovative electric motorcycle startup. 24 patents filed, 13 granted, and founders from Simple Energy, ISRO, Emflux Motors.",
     url: `${siteUrl}/about`,
     images: [{ url: "/images/tem-logo.png", width: 1200, height: 630, alt: "About TEM Motorrs" }],
   },

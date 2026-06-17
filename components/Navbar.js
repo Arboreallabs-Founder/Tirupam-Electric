@@ -10,6 +10,7 @@ const links = [
   { href: "/bike", label: "The Bike" },
   { href: "/technology", label: "Technology" },
   { href: "/about", label: "About" },
+  { href: "/investors", label: "Investors" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -63,7 +64,7 @@ export default function Navbar() {
             ))}
           </div>
 
-          <Link href="/pre-order" className={clsx("btn", styles.ctaBtn, navTheme === "transparent" ? "btn-white" : "btn-dark")}>
+          <Link href="/pre-order" className={clsx("btn btn-white", styles.ctaBtn)}>
             Pre-order
           </Link>
 

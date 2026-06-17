@@ -160,7 +160,7 @@ const startupListingSchema = {
         name: "TEM Motorrs",
         alternateName: "Tirupam Electric Mobility",
         description:
-          "Indian EV startup building India's first 9-minute charging, 300 km-range electric motorcycle. Founded 2024 in New Delhi. 24 patents filed. Government Letters of Intent received. Founders from Simple Energy, ISRO, and Emflux Motors.",
+          "Indian EV startup building India's first 9-minute charging, 300 km-range electric motorcycle. Founded 2024 in New Delhi. 24 patents filed, 13 granted. Founders from Simple Energy, ISRO, and Emflux Motors.",
         url: siteUrl,
         foundingDate: "2024",
         foundingLocation: "New Delhi, India",

@@ -79,7 +79,7 @@ const faqSchema = {
       name: "How many patents does TEM Motorrs have?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "TEM Motorrs has filed 24 patents covering vehicle design, the magnetless PCB motor, the structural battery architecture, suspension systems, and the integrated BMS-charger. Two patents have already been granted by the Indian Patent Office as of 2025.",
+        text: "TEM Motorrs has filed 24 patents covering vehicle design, the magnetless PCB motor, the structural battery architecture, suspension systems, and the integrated BMS-charger. 13 patents have been granted by the Indian Patent Office.",
       },
     },
   ],
