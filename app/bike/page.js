@@ -177,9 +177,6 @@ export default function BikePage() {
             <strong>TEM Electric</strong>
             <span className={styles.stickyTagline}>Priority reservation available</span>
           </div>
-          <Link href="/pre-order" className="btn btn-white">
-            Pre-order Now →
-          </Link>
         </div>
       </div>
     </div>
