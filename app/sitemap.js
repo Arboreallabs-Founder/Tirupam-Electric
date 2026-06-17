@@ -1,6 +1,6 @@
 /** @type {import('next').MetadataRoute.Sitemap} */
 export default function sitemap() {
-  const base = "https://temmotorrs.com";
+  const base = "https://www.temmotorrs.com";
 
   return [
     { url: `${base}`,              lastModified: "2026-06-13", changeFrequency: "weekly",  priority: 1.0 },
