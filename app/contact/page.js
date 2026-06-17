@@ -67,7 +67,7 @@ const itemAnim = {
   },
 };
 
-const CONTACT_FORMSPREE_URL = "https://formspree.io/f/mqewaqqk";
+const CONTACT_FORMSUBMIT_URL = "https://formsubmit.co/ajax/bhanu@temmotorrs.com";
 
 export default function ContactPage() {
   const [form, setForm] = useState({
@@ -91,7 +91,7 @@ export default function ContactPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch(CONTACT_FORMSPREE_URL, {
+      const res = await fetch(CONTACT_FORMSUBMIT_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -105,10 +105,9 @@ export default function ContactPage() {
         }),
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok) {
+      if (!res.ok || data.success === "false" || data.success === false) {
         const errText =
-          data?.errors?.[0]?.message ||
-          data?.error ||
+          data?.message ||
           "Could not send your message. Please try again.";
         throw new Error(errText);
       }
