@@ -23,12 +23,19 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.top}>
         <div className={styles.brandCol}>
-          <div className={styles.brand}>Tem Motorrs</div>
+          <div className={styles.brand}>TEM Motorrs</div>
           <p className={styles.tagline}>Built To Think.</p>
           <p className={styles.desc}>
             Premium electric mobility with 9 mins fast charging — engineered for future cities,
             built for riders who think ahead.
           </p>
+          <address className={styles.napBlock}>
+            <span className={styles.napName}>TEM Motorrs (Tirupam Electric Mobility)</span>
+            <span>A1/19B, First Floor, Paschim Vihar</span>
+            <span>New Delhi, Delhi 110063, India</span>
+            <a href="tel:+917986604025" className={styles.napLink}>+91 79866 04025</a>
+            <a href="mailto:finance@temmotorrs.com" className={styles.napLink}>finance@temmotorrs.com</a>
+          </address>
         </div>
 
         <div className={styles.col}>
@@ -51,7 +58,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.bottom}>
-        <span>&copy; 2026 Tem Motorrs. All rights reserved.</span>
+        <span>&copy; 2026 TEM Motorrs. All rights reserved.</span>
         <span className={styles.bottomRight}>Built To Think.</span>
       </div>
     </footer>

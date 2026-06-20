@@ -8,6 +8,6 @@ export default function robots() {
         disallow: ["/pre-order/success", "/api/"],
       },
     ],
-    sitemap: "https://temmotorrs.com/sitemap.xml",
+    sitemap: "https://www.temmotorrs.com/sitemap.xml",
   };
 }

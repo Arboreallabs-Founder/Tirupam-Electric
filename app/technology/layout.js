@@ -1,4 +1,4 @@
-const siteUrl = "https://temmotorrs.com";
+const siteUrl = "https://www.temmotorrs.com";
 
 export const metadata = {
   title: "How the 9-Minute EV Works | TEM Motorrs Technology",

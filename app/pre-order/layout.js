@@ -1,4 +1,4 @@
-const siteUrl = "https://temmotorrs.com";
+const siteUrl = "https://www.temmotorrs.com";
 
 export const metadata = {
   title: "Pre-Order | Reserve the TEM Electric Bike | ₹2.25 Lakh",

@@ -1,4 +1,4 @@
-const siteUrl = "https://temmotorrs.com";
+const siteUrl = "https://www.temmotorrs.com";
 
 export const metadata = {
   title: "Investors | TEM Motorrs — Early-Stage EV Opportunity",

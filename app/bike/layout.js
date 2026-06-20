@@ -1,4 +1,4 @@
-const siteUrl = "https://temmotorrs.com";
+const siteUrl = "https://www.temmotorrs.com";
 
 export const metadata = {
   title: "The 9-Minute EV | 300 km Electric Bike — Tirupam by TEM Motorrs",

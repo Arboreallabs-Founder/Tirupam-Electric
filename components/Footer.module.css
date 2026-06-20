@@ -42,6 +42,34 @@
   font-weight: 300;
 }
 
+.napBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-top: 1.75rem;
+  font-style: normal;
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: var(--font-body), sans-serif;
+  font-weight: 300;
+}
+
+.napName {
+  color: rgba(255, 255, 255, 0.45);
+  font-weight: 400;
+}
+
+.napLink {
+  color: rgba(255, 255, 255, 0.4);
+  text-decoration: none;
+  transition: color 0.4s var(--ease);
+}
+
+.napLink:hover {
+  color: var(--white);
+}
+
 .colTitle {
   font-family: var(--font-body), sans-serif;
   font-size: 0.58rem;

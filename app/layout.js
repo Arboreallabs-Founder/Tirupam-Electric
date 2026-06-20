@@ -17,7 +17,7 @@ const body = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const siteUrl = "https://temmotorrs.com";
+const siteUrl = "https://www.temmotorrs.com";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
@@ -104,10 +104,23 @@ const orgSchema = {
     availableLanguage: ["English", "Hindi"],
   },
   numberOfEmployees: { "@type": "QuantitativeValue", minValue: 2, maxValue: 20 },
+  geo: {
+    "@type": "GeoCoordinates",
+    // TODO: replace with the exact HQ pin from Google Maps (≥5 decimals)
+    latitude: 28.66880,
+    longitude: 77.10250,
+  },
+  openingHoursSpecification: {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "10:00",
+    closes: "18:00",
+  },
   sameAs: [
-    "https://instagram.com/temmotorrs",
-    "https://youtube.com/@temmotorrs",
-    "https://linkedin.com/company/temmotorrs",
+    "https://www.instagram.com/tem_motorrs",
+    "https://x.com/Tem_motorrs",
+    "https://www.facebook.com/profile.php?id=61579456566288",
+    "https://www.linkedin.com/in/tem-motorrs-3626543b8",
   ],
   knowsAbout: [
     "Electric Two-Wheelers",
