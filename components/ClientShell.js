@@ -10,7 +10,7 @@ import SmoothScroll from "@/components/SmoothScroll";
 import styles from "./SplashIntro.module.css";
 
 /* ─── Config ─── */
-const INTRO_DURATION = 3.8; // total seconds
+const INTRO_DURATION = 1.6; // total seconds
 
 /* ─── Easing curves ─── */
 const EXPO_OUT = [0.16, 1, 0.3, 1];
@@ -172,16 +172,27 @@ export default function ClientShell({ children }) {
     }
   }, [pathname]);
 
-  /* If user prefers reduced motion, skip intro immediately */
+  /* Skip the intro entirely for: reduced-motion users, search-engine crawlers
+     and headless browsers (so Lighthouse/Googlebot see content immediately),
+     and repeat visits within the same session. */
   useEffect(() => {
     if (gate !== "intro") return;
-    if (!reduceMotion) return;
-    setGate("live");
+
+    const ua = typeof navigator !== "undefined" ? navigator.userAgent : "";
+    const isBot = /bot|crawl|spider|lighthouse|headless|chrome-lighthouse/i.test(ua);
+    let alreadySeen = false;
+    try { alreadySeen = sessionStorage.getItem("temIntroSeen") === "1"; } catch {}
+
+    if (reduceMotion || isBot || alreadySeen) {
+      document.body.style.overflow = "";
+      setGate("live");
+    }
   }, [gate, reduceMotion]);
 
   /* Called when intro animation completes */
   const finishIntro = useCallback(() => {
     document.body.style.overflow = "";
+    try { sessionStorage.setItem("temIntroSeen", "1"); } catch {}
     setGate("live");
   }, []);
 

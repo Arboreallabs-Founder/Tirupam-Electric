@@ -1,6 +1,6 @@
 "use client";
 
-import { Suspense, useMemo, useRef } from "react";
+import { Suspense, useMemo, useRef, useEffect } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Environment, Html, useProgress, useGLTF, useEnvironment } from "@react-three/drei";
 import * as THREE from "three";
@@ -28,7 +28,15 @@ const ROT_END = ROT_START + Math.PI * 2;
 function ScrollBike({ progress }) {
   const group = useRef();
   const { scene } = useGLTF(BIKE_MODEL_URL);
-  const { size } = useThree();
+  const { size, invalidate } = useThree();
+
+  // On-demand rendering: the canvas only draws frames when something changes.
+  // Request a frame whenever the user scrolls (progress updates), and render
+  // an initial frame once mounted so the bike appears at its starting pose.
+  useEffect(() => {
+    invalidate();
+    return progress.on("change", () => invalidate());
+  }, [progress, invalidate]);
 
   const geometry = useMemo(() => {
     let rawGeo;
@@ -70,8 +78,14 @@ function ScrollBike({ progress }) {
     const s = THREE.MathUtils.damp(g.scale.x, targetScale, 5, delta);
     g.scale.setScalar(s);
 
-    // Gentle idle float so the bike never feels frozen between scrolls
-    g.position.y = Math.sin(state.clock.elapsedTime * 0.6) * 0.06;
+    // Keep requesting frames until the damped values have essentially settled,
+    // then stop so the main thread can go idle (lets the page pass perf audits
+    // and saves battery instead of rendering 60fps forever).
+    const settled =
+      Math.abs(g.rotation.y - targetRot) < 1e-3 &&
+      Math.abs(g.position.x - targetX) < 1e-3 &&
+      Math.abs(g.scale.x - targetScale) < 1e-3;
+    if (!settled) invalidate();
   });
 
   return (
@@ -109,7 +123,8 @@ export default function BikeScrollCanvas({ progress }) {
   return (
     <Canvas
       camera={{ position: [0, 0.5, 9], fov: 42 }}
-      dpr={[1, 1.8]}
+      dpr={[1, 1.5]}
+      frameloop="demand"
       shadows
       gl={{ antialias: true, alpha: true }}
       style={{ position: "absolute", inset: 0, background: "transparent", pointerEvents: "none" }}
