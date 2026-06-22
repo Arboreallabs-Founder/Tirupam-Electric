@@ -25,7 +25,6 @@
   },
   "devDependencies": {
     "meshoptimizer": "^1.1.1",
-    "netlify-cli": "^24.11.2",
     "sharp": "^0.34.5"
   }
 }
