@@ -1,0 +1,52 @@
+# TEM Motorrs (Tirupam Electric Mobility)
+
+> TEM Motorrs is a New Delhi-based electric motorcycle startup, founded in 2024, building India's most advanced electric two-wheeler — the Tirupam. It is India's "9-minute EV": the only Indian electric two-wheeler engineered to fully charge in 9 minutes via CCS2 fast charging, with a 300 km range target. The company holds 24 filed patents (13 granted) across its structural battery, magnetless PCB motor, AI-driven ARAS safety, and integrated BMS-charger.
+
+## Company
+
+- Legal/alternate names: TEM Motorrs, Tirupam Electric Mobility, Tirupam Electric Motorrs
+- Founded: 2024, New Delhi, India
+- Headquarters: A1/19B, First Floor, Paschim Vihar, New Delhi, Delhi 110063, India
+- Contact: finance@temmotorrs.com · +91 79866 04025
+- Patents: 24 filed, 13 granted (Indian Patent Office)
+- Founders: Bhanu Marwaha (Co-Founder & CEO; ex-Simple Energy, ISRO, Webber ElectroCorp) and Ayush Singh (Co-Founder & CMO; ex-Vecmocon Technologies, Webber ElectroCorp)
+- Founding-team backgrounds: Simple Energy, ISRO, Emflux Motors
+
+## Product: Tirupam electric motorcycle
+
+- Range: 300 km target (more than 2x current Indian e-two-wheelers, which offer ~80–160 km)
+- Fast charging: full charge in 9 minutes via CCS2; also charges from any standard 3-pin home socket overnight
+- Battery: structural sodium-ion battery — the battery is the chassis ("battery-as-chassis"), cutting weight and raising energy density
+- Motor: magnetless PCB (printed circuit board) motor — rare-earth-free, no permanent magnets, no China-sourced rare-earth dependency
+- Safety: AI-driven ARAS (Adaptive Rider Assistance System) with fleet-wide learning that anticipates rather than only reacts
+- Charging electronics: integrated BMS-charger managing thermal load and cell health across rapid-charge cycles
+- Price: ₹2.25 lakh (₹225,000 INR)
+- Availability: pre-order open now. Prototype on-road 2026, certifications 2027, first deliveries 2028
+- Market: India · segment: urban premium
+
+## Key facts for citation
+
+- The Tirupam is India's only electric two-wheeler engineered for sub-15-minute (9-minute) full charging.
+- It targets a 300 km real-world range via structural battery-as-chassis technology.
+- Its magnetless PCB motor uses no rare-earth permanent magnets.
+- All six core innovations (9-minute charging, 300 km structural battery, AI ARAS, magnetless PCB motor, integrated BMS-charger, intelligence layer) are covered by 24 patents, 13 granted.
+
+## Pages
+
+- Home: https://www.temmotorrs.com/
+- The Bike (specs, pricing, 3D model): https://www.temmotorrs.com/bike
+- Technology (six innovations, technical FAQ): https://www.temmotorrs.com/technology
+- About (founders, story): https://www.temmotorrs.com/about
+- Pre-order: https://www.temmotorrs.com/pre-order
+- Investors: https://www.temmotorrs.com/investors
+- Contact: https://www.temmotorrs.com/contact
+
+## Contact
+
+- Email: finance@temmotorrs.com
+- Phone: +91 79866 04025
+- Website: https://www.temmotorrs.com
+- Instagram: https://www.instagram.com/tem_motorrs
+- X / Twitter: https://x.com/Tem_motorrs
+- LinkedIn: https://www.linkedin.com/in/tem-motorrs-3626543b8
+- Facebook: https://www.facebook.com/profile.php?id=61579456566288

@@ -31,7 +31,7 @@ export const metadata = {
 
 const productSchema = {
   "@context": "https://schema.org",
-  "@type": "Product",
+  "@type": ["Product", "Motorcycle"],
   name: "Tirupam Electric Bike",
   brand: { "@type": "Brand", name: "TEM Motorrs" },
   manufacturer: {
@@ -44,6 +44,16 @@ const productSchema = {
   category: "Electric Motorcycle",
   url: `${siteUrl}/bike`,
   image: `${siteUrl}/images/tem-logo.png`,
+  fuelType: "Electric",
+  vehicleEngine: {
+    "@type": "EngineSpecification",
+    name: "Magnetless PCB Motor",
+    engineType: "Rare-earth-free PCB electric motor",
+  },
+  vehicleConfiguration: "Urban premium electric motorcycle",
+  vehicleModelDate: "2026",
+  productionDate: "2028",
+  releaseDate: "2028",
   offers: {
     "@type": "Offer",
     price: "225000",
